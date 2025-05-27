@@ -4,11 +4,10 @@ body {
   height: 100vh;
   margin: 0;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
+  justify-content: center;
+  align-items: center;
   background-image: url(./xyz.avif);
-   backdrop-filter: blur(4px);
-  
+  backdrop-filter: blur(4px);
 }
 
 .todo-container {
@@ -19,52 +18,8 @@ body {
   width: 500px;
   max-width: 100%;
   border: #c6b5b5 solid 2px;
-  overflow-wrap: break-word;  /* Important */
+  overflow-wrap: break-word;
   word-wrap: break-word;
-}
-
-.todo-list label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
-  word-break: break-word;
-}
-
-
-.todo-container h2 {
-  text-align: center;
-  color: #ddd2d2;
-  margin-bottom: 20px;
-}
-
-.todo-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.todo-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-  color: #0b0a0a;
-  display: flex;
-  align-items: center;
-  word-break: break-word;     /* Key property */
-  flex-wrap: wrap;            /* Allows text to wrap */
-}
-
-
-.todo-list li:last-child {
-  border-bottom: none;
-}
-
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-  accent-color: #28a745;
 }
 
 .heading-container {
@@ -79,12 +34,13 @@ input[type="checkbox"] {
   margin: 0;
   color: white;
   font-size: 24px;
+  align-items: center;
 }
+
 .add-task {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-
 }
 
 .add-task input[type="text"] {
@@ -110,3 +66,53 @@ input[type="checkbox"] {
   background-color: #218838;
 }
 
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #0b0a0a;
+  flex-wrap: wrap;
+  word-break: break-word;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.todo-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  flex-wrap: wrap;
+  word-break: break-word;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.2);
+  accent-color: #28a745;
+}
+
+.remove-btn {
+  background-color: #0b0a0a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background-color: #28a745;
+}

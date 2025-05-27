@@ -7,23 +7,22 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="todo-container">
-  <div class="heading-container">
-    <h1>My To-Do List</h1>
-  </div>
-  <ul class="todo-list">
-    <!-- list items here -->
-     <div class="add-task">
-      <input type="text" placeholder="Add new task..." />
-      <button>Add</button>
+  <div class="todo-container">
+    <div class="heading-container">
+      <h1>My To-Do List</h1>
     </div>
-     <ul class="todo-list">
-    <!-- New tasks will be added here -->
-  </ul>
-    
-  </ul>
-</div>
-<script src="script.js"></script>
 
+    <div class="add-task">
+      <input type="text" id="taskInput" placeholder="Add new task..." />
+      <button id="addButton">Add</button>
+      
+    </div>
+
+    <ul class="todo-list" id="taskList">
+      <!-- Tasks will appear here -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

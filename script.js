@@ -1,36 +1,38 @@
-// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
-  const addButton = document.querySelector('.add-task button');
-  const input = document.querySelector('.add-task input');
-  const todoList = document.querySelector('.todo-list');
+  const addButton = document.getElementById('addButton');
+  const input = document.getElementById('taskInput');
+  const todoList = document.getElementById('taskList');
 
-  addButton.addEventListener('click', () => {
+  function addTask() {
     const taskText = input.value.trim();
 
     if (taskText !== '') {
-      // Create a new list item
       const listItem = document.createElement('li');
+      listItem.classList.add('task-item');
+
       listItem.innerHTML = `
         <label>
           <input type="checkbox" />
-          ${taskText}
+          <span>${taskText}</span>
         </label>
+        <button class="remove-btn">Remove</button>
       `;
 
-      // Append to the list
-      todoList.appendChild(listItem);
+      listItem.querySelector('.remove-btn').addEventListener('click', () => {
+        todoList.removeChild(listItem);
+      });
 
-      // Clear the input field
+      todoList.appendChild(listItem);
       input.value = '';
     } else {
       alert("Please enter a task!");
     }
-  });
+  }
 
-  // Optional: Allow pressing Enter to add task
+  addButton.addEventListener('click', addTask);
   input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-      addButton.click();
+      addTask();
     }
   });
 });
